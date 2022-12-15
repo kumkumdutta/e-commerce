@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="https://kit.fontawesome.com/4532ccdc0b.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,47 +13,98 @@
 
        }
        #container {
-       
+       width: 80%;
         display: grid;
         grid-template-columns: repeat(4,1fr);
+        row-gap: 25px;
         
        }
        #container > div{
         width: 80%;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         margin: auto;
+        border: red solid;
         border-radius: 25px;
+        word-wrap: calc();
+
        } 
        #container > div > img {
         width: 100%;
        }
-    #container > div > h1 , #container > div > h2 ,  #container > div > p {
+    #container > div > h3 , #container > div > h4 ,  #container > div > p {
         text-align: start;
+        
+    }
+    #navdiv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     
 
         nav {
-            width: 100%;
+            width: 80%;
             display: flex;
             justify-content: space-between;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow:  rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
             margin-bottom: 50px;
+            height: 50px;
+            position: initial;
+        }
+        #language{
+            border:  0px;
         }
         
         
         #search {
             
             display: flex;
-            width: 20% 
+            width: 20% ;
+            border-radius: 5px;
+            border:#006064 3px solid ;
+        }
+        #search:hover {
+            
+            display: flex;
+            width: 20% ;
+            border-radius: 5px;
+            border:#18FFFF 2px solid ;
         }
         #image {
             width: 12px;
         }
         #city {
             width: 300px;
+            border: 0px;
+            
         }
     #searchproducts {
-        width:60%;
+        display: flex;
+        width:40%;
+        background-color: #01282a;
+        border-radius: 5px;
+            border:#006064 2px solid ;
+            
+            
+    }
+    input {
+        
+      width: 90%;  
+      height: 40px;
+      padding-top: 5px ;
+      margin-bottom: 5px;
+      display: block;
+       
+       
+
+        
+    }
+    
+    #searchproducts:hover{
+        width:40%;
+        background-color: #01282a;
+        border-radius: 5px;
+            border:#18FFFF 2px solid ; 
     }
     #logo {
         width: 55px;
@@ -67,33 +118,128 @@
         background-color: cadetblue;
         margin-bottom: 30px;
     }
-    #banner > img {
-        width: 80%;
-    }
-    #banner > h1 {
+    
+    #banner > h2 {
        
-       align-items: center;
-       
+       text-align: center;
+       align-self: center;
+       color: white;
+       font-family: sans-serif;
        
     }
     #banner > button {
-        width: 180px;
+        width: 100px;
         height: 40px;
         align-self: center;
+       margin-right: 20px;
+       color: #006064;
+       border: 5px white solid;
+       border-radius: 5px;
         
     }
+    #banner > button:hover {
+        width: 100px;
+        height: 40px;
+        align-self: center;
+       margin-right: 20px;
+       color: white;
+       border: 5px white solid;
+       border-radius: 5px;
+       background-color:cadetblue ;
+         
+    }
+    #language {
+        border-radius: 5px;
+        font-size: 20px;
+        font-family:Georgia, 'Times New Roman', Times, serif ;
+    }
+    u {
+        align-self: center;
+        color:#006064 ;
+    }
+    #sell {
+        border-radius: 15px;
+    }
+    #binimoy{
+        width: 200px;
+        height: 100px;
+        align-self: center;
+    }
+    #car {
+        width: 50%;
+    }
+    #banner2 {
+        width: 100%;
+        display: flex;
+        height: 200px;
+        padding-top: 20px;
+        background-color: rgba(230, 243, 243, 0.888);
+    }
+    #banner2 > img {
+        width: 30%;
+    }
+    #banner2 > div{
+        width: 30%;
+       
+    }
+    #banner2 > h1{
+        font-family: serif;
+    }
+    #banner2 > div > h3{
+        font-family: monospace;
+    }
+    #download {
+        margin: auto;
 
+    }
+    #download >  h2 {
+        text-align: center;
+    }
+    #download>img {
+      width: 40%;
+      margin: auto;
+      display: block;
+    }
+    #footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        background-color:#E0E0E0 ;
+
+
+    }
+    #social {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #footer > div > p {
+        color:#546E7A ;
+    }
+ #footer > div > p:hover{
+        color:#01282a;
+    }
+#searchbox{
+    width: 90%;
+    
+}
+    #searchbox  > input{
+       width: 100%;
+        height: 37px;
+        border: 0px;
+    }
+   
 
 
 
     </style>
 </head>
 <body>
+    <div id="navdiv">
     <nav>
         <a href="index.html"><img id="logo" src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt=""></a>
         <div id="search">
             
-        <img id="image" src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" alt="">
+            <i class="fa-solid fa-magnifying-glass" style="display: block; margin: auto;"></i>
         <select name="" id="city">
             <option value="">Kerala</option>
             <option value="">Siliguri</option>
@@ -101,32 +247,124 @@
             <option value="">Mumbai</option>
         </select>
     </div>
-    
-        <input type="text" id="searchproducts" placeholder="search products">
-        <select>
+    <div id="searchproducts">
+        <div id="searchbox">
+        <input type="text" id="input"  placeholder="Find Cars, Mobile Phones and more...">
+    </div>
+<div id="icon">
+        <i class="fa-solid fa-magnifying-glass" style="color: white; font-size: 25px; padding-left: 7px; padding-top: 10px;"></i>
+    </div>
+    </div>
+        <select id="language">
            <option value="">English</option>
            <option value="">हिन्दि</option>
         </select>
-        <u>Login</u>
+        <u onclick="signin()" id="login">login</u>
         <button id="sell">⁘SELL</button>
     
 
     </nav>
+</div> 
+<div>
+   <h2>All categories </h2>
+
+
+    
+</div>
     <div id="banner">
-        <img src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt="">
+        <img id="binimoy" src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt="">
         <h2>BINIMOY AUTO GIVES EXTRAAA PRICE FOR EVERY CAR</h2>
         <button>Sell Car</button>
-        <img src="https://www.cartoq.com/wp-content/uploads/2022/03/alto.jpg" alt="">
+        <img id="car" src="https://www.cartoq.com/wp-content/uploads/2022/03/alto.jpg" alt="">
 
     </div>
     <div id="parent">
     <div id="container">
-         </div>    
+         </div>
+          
+    </div>
+    <div id="banner2">
+       <img src="https://www.webdew.com/hubfs/10-unique-problems-of-e-commerce-website-design%20%281%29.svg" alt="">
+       <div>
+        <h1>TRY THE BINIMOY APP</h1>
+        <h3>Buy, sell and find just about anything using the app on your mobile</h3>
+       </div>
+       <div id="download">
+        <h2>get your app today</h2>
+       <img src="https://static.wixstatic.com/media/76b4e0_7e175311e0f3460f99b048f1af57545f~mv2.png/v1/fill/w_480,h_298,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Google%20Play%20App%20Store%20Logo.png" alt="">
+       </div>
+    </div>
+    <div id="footer">
+        <div>
+        <h3>POPULAR LOCATION</h3>
+        <p>Kolkata</p>
+        <p>Mumbai</p>
+        <p>Chennai</p>
+        <p>Pune</p>
+    </div>
+    <div>
+        <h3>TRENDING LOCATIONS</h3>
+        <p>Bhubaneshwar</p>
+        <p>Hyderabad</p>
+        <p>Chandigarh</p>
+        <p>Nashik</p>
+    </div>
+    <div>
+        <h3>ABOUT US</h3>
+        <p>About Binimoy Group</p>
+        <p>Careers</p>
+        <p>Contact Us</p>
+        <p>Binimoy People</p>
+        <p>Waah Jobs</p>
+    </div>
+    <div>
+        <h3>BINIMOY</h3>
+        <p>Help</p>
+        <p>Sitemap</p>
+        <p>Legal & Privacy information</p>
+        <p>Blog</p>
+        <p>BINIMOY Autos Sell Car</p>
+    </div>
+
+    <div>
+
+        <h3>follow us on</h3>
+        <div id="social">  
+        <i class="fa-brands fa-instagram" style="font-size:20px;"></i>
+        <i class="fa-brands fa-facebook" style="font-size:20px;"></i>
+        <i class="fa-brands fa-youtube" style="font-size:20px;"></i>
+    </div> 
+    </div>  
+    
     </div>
     
+      
+    
 </body>
+
 <script>
+    
+    
     let container = document.getElementById("container");
+    let login = document.getElementById("login")
+    
+    function signin (){
+        container.innerHTML = null
+       let box = document.createElement("div");
+       let form = document.createElement("form")
+       let name = document.createElement("input")
+       name.setAttribute("type", "text")
+       name.setAttribute("name", "fullname")
+       name.setAttribute("placeholder","Full Name")
+       form.append(name)
+       box.append(form)
+       container.append(box)
+
+       
+      box.append(btn)
+      container.append(box)
+    // console.log("kkk")
+    }
 
     let promise = fetch("https://fakestoreapi.com/products")
     promise.then((responseObject)=>{
@@ -140,19 +378,19 @@
     })
 
     function displayProduct(data){
+        container.innerHTML=null
         data.forEach(element => {
             let card = document.createElement("div");
             let image = document.createElement("img");
             image.setAttribute("src",element.image);
-            let name = document.createElement("h1");
+            let name = document.createElement("h3");
             name.innerText = element.title;
-            let price = document.createElement("h2");
-            price.innerText = element.price;
-            let description = document.createElement("p");
-            description.innerText = element.description;
+            let price = document.createElement("h4");
+            price.innerText = "₹"+" "+element.price;
+            
             let category = document.createElement("p");
             category.innerText = element.category;
-            card.append(image,name,price,description,category)
+            card.append(image,name,price,category)
             container.append(card)
         });
     }
