@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binimoy/home Page</title>
+    <style>
+       #parent {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+       }
+       #container {
+       
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        
+       }
+       #container > div{
+        width: 80%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin: auto;
+        border-radius: 25px;
+       } 
+       #container > div > img {
+        width: 100%;
+       }
+    #container > div > h1 , #container > div > h2 ,  #container > div > p {
+        text-align: start;
+    }
+    
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin-bottom: 50px;
+        }
+        
+        
+        #search {
+            
+            display: flex;
+            width: 20% 
+        }
+        #image {
+            width: 12px;
+        }
+        #city {
+            width: 300px;
+        }
+    #searchproducts {
+        width:60%;
+    }
+    #logo {
+        width: 55px;
+        height: 30px;
+    }
+    #banner {
+        display: flex;
+        width: 100%;
+        height: 200px;
+        justify-items: center;
+        background-color: cadetblue;
+        margin-bottom: 30px;
+    }
+    #banner > img {
+        width: 80%;
+    }
+    #banner > h1 {
+       
+       align-items: center;
+       
+       
+    }
+    #banner > button {
+        width: 180px;
+        height: 40px;
+        align-self: center;
+        
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img id="logo" src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt=""></a>
+        <div id="search">
+            
+        <img id="image" src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" alt="">
+        <select name="" id="city">
+            <option value="">Kerala</option>
+            <option value="">Siliguri</option>
+            <option value="">Kolkata</option>
+            <option value="">Mumbai</option>
+        </select>
+    </div>
+    
+        <input type="text" id="searchproducts" placeholder="search products">
+        <select>
+           <option value="">English</option>
+           <option value="">हिन्दि</option>
+        </select>
+        <u>Login</u>
+        <button id="sell">⁘SELL</button>
+    
+
+    </nav>
+    <div id="banner">
+        <img src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt="">
+        <h2>BINIMOY AUTO GIVES EXTRAAA PRICE FOR EVERY CAR</h2>
+        <button>Sell Car</button>
+        <img src="https://www.cartoq.com/wp-content/uploads/2022/03/alto.jpg" alt="">
+
+    </div>
+    <div id="parent">
+    <div id="container">
+         </div>    
+    </div>
+    
+</body>
+<script>
+    let container = document.getElementById("container");
+
+    let promise = fetch("https://fakestoreapi.com/products")
+    promise.then((responseObject)=>{
+        return responseObject.json()
+    })
+    .then((acctualdata)=>{
+        displayProduct(acctualdata)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+
+    function displayProduct(data){
+        data.forEach(element => {
+            let card = document.createElement("div");
+            let image = document.createElement("img");
+            image.setAttribute("src",element.image);
+            let name = document.createElement("h1");
+            name.innerText = element.title;
+            let price = document.createElement("h2");
+            price.innerText = element.price;
+            let description = document.createElement("p");
+            description.innerText = element.description;
+            let category = document.createElement("p");
+            category.innerText = element.category;
+            card.append(image,name,price,description,category)
+            container.append(card)
+        });
+    }
+
+</script>
+</html>
