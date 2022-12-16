@@ -10,31 +10,57 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        padding-bottom: 25px;
 
        }
        #container {
        width: 80%;
         display: grid;
         grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
         row-gap: 25px;
+
         
        }
-       #container > div{
+       #container > .card{
         width: 80%;
+        height: 400px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         margin: auto;
-        border: red solid;
-        border-radius: 25px;
+        
+        border-radius: 5px;
         word-wrap: calc();
 
        } 
-       #container > div > img {
+     .imagecard {
         width: 100%;
+        height:200px ;
        }
-    #container > div > h3 , #container > div > h4 ,  #container > div > p {
-        text-align: start;
-        
-    }
+       .imagecard > img {
+        width: 80%;
+        height: 200px;
+        margin: auto;
+        display: block;
+       }
+    #container > .card > .detailscard {
+       width: 100%;
+       height: 100px;
+       
+       
+    } 
+
+    .detailscard > h2 , .detailscard > p {
+   padding-left: 5px;
+
+    }   
+.detailscard > p{
+    color: lightslategrey;
+    font-family: sans-serif;
+}
+.detailscard > h2 {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+    
     #navdiv {
         width: 100%;
         display: flex;
@@ -43,11 +69,11 @@
     
 
         nav {
-            width: 80%;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             box-shadow:  rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-            margin-bottom: 50px;
+           
             height: 50px;
             position: initial;
         }
@@ -109,13 +135,15 @@
     #logo {
         width: 55px;
         height: 30px;
+        padding-top: 10px;
+       
     }
     #banner {
         display: flex;
         width: 100%;
-        height: 200px;
+        height: 150px;
         justify-items: center;
-        background-color: cadetblue;
+        background-color:#0ca8b4;
         margin-bottom: 30px;
     }
     
@@ -124,28 +152,30 @@
        text-align: center;
        align-self: center;
        color: white;
-       font-family: sans-serif;
+       font-family: "Gill Sans", sans-serif;
        
     }
     #banner > button {
-        width: 100px;
-        height: 40px;
+        width: 140px;
+        height: 50px;
         align-self: center;
        margin-right: 20px;
-       color: #006064;
+       color: #054045;
+       font-size: 15px;
+       font-family: fantasy;
        border: 5px white solid;
        border-radius: 5px;
         
     }
     #banner > button:hover {
-        width: 100px;
-        height: 40px;
+        width: 140px;
+        height: 50px;
         align-self: center;
        margin-right: 20px;
        color: white;
        border: 5px white solid;
        border-radius: 5px;
-       background-color:cadetblue ;
+       background-color:#0ca8b4 ;
          
     }
     #language {
@@ -227,6 +257,27 @@
         height: 37px;
         border: 0px;
     }
+    #ac {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        
+        
+    }
+    #acchild {
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        
+    }
+
+    #icondiv{
+        display: flex;
+
+    }
+    #acchild > div > p:hover {
+     color: #737a7a ;
+    }
    
 
 
@@ -259,14 +310,43 @@
            <option value="">English</option>
            <option value="">हिन्दि</option>
         </select>
-        <u onclick="signin()" id="login">login</u>
+       <a href="login.html"><u id="login">login</u></a> 
         <button id="sell">⁘SELL</button>
     
 
     </nav>
 </div> 
-<div>
-   <h2>All categories </h2>
+<div id="ac">
+    <div id="acchild">
+   <div id="icondiv">
+    <h5 style="padding-bottom: 5px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">ALL CATEGORIES </h5><i class="fa-sharp fa-solid fa-caret-down" style="margin: auto;padding-left: 9px;"></i>
+   </div>
+   <div>
+    <p>Cars</p>
+   </div>
+   <div>
+    <p>Motorcycles</p>
+   </div>
+   <div>
+    <p>Mobilephones</p>
+   </div>
+   <div>
+    <p>For Sale: House & Apartments </p>
+   </div>
+   <div>
+    <p>BINIMOY Renew(phones)</p>
+   </div>
+   <div>
+    <p>Scooter</p>
+   </div>
+   <div>
+    <p>Commercial & Other Vehicles</p>
+   </div>
+   <div>
+    <p>Houses for Rent</p>
+   </div>
+</div>
+   
 
 
     
@@ -343,10 +423,16 @@
 </body>
 
 <script>
+    let ac = document.getElementById("ac")
+    function allcategory (){
+        let page = document.createElement("div")
+        
+    }
+
     
     
     let container = document.getElementById("container");
-    let login = document.getElementById("login")
+    
     
     function signin (){
         container.innerHTML = null
@@ -366,7 +452,7 @@
     // console.log("kkk")
     }
 
-    let promise = fetch("https://fakestoreapi.com/products")
+    let promise = fetch("https://639c1ac842e3ad6927272409.mockapi.io/products")
     promise.then((responseObject)=>{
         return responseObject.json()
     })
@@ -381,16 +467,25 @@
         container.innerHTML=null
         data.forEach(element => {
             let card = document.createElement("div");
+            card.classList.add("card")
+            let imagecard = document.createElement("div")
+            imagecard.classList.add("imagecard")
             let image = document.createElement("img");
+            imagecard.append(image)
+            
             image.setAttribute("src",element.image);
+            let detailscard = document.createElement("div")
+            detailscard.classList.add("detailscard")
             let name = document.createElement("h3");
             name.innerText = element.title;
-            let price = document.createElement("h4");
+            let price = document.createElement("h2");
             price.innerText = "₹"+" "+element.price;
-            
             let category = document.createElement("p");
             category.innerText = element.category;
-            card.append(image,name,price,category)
+            let city = document.createElement("p")
+            city.innerText = element.city
+            detailscard.append(price,name,category,city)
+            card.append(imagecard,detailscard)
             container.append(card)
         });
     }
