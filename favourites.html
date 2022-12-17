@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINIMOY/Favourites</title>
+</head>
+<style>
+    #parent {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 25px;
+
+       }
+#fav-container {
+    width: 80%;
+     display: grid;
+     grid-template-columns: repeat(4,1fr);
+     grid-template-rows: repeat(4,1fr);
+     row-gap: 25px;
+
+     
+    }
+    #fav-container > .card{
+     width: 80%;
+     height: 400px;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     margin: auto;
+     
+     border-radius: 5px;
+     word-wrap: calc();
+
+    } 
+  .imagecard {
+     width: 100%;
+     height:200px ;
+    }
+    .imagecard > img {
+     width: 80%;
+     height: 200px;
+     margin: auto;
+     display: block;
+    }
+ #container > .card > .detailscard {
+    width: 100%;
+    height: 100px;
+    
+    
+ } 
+
+ .detailscard > h2 , .detailscard > p {
+padding-left: 5px;
+
+ }   
+.detailscard > p{
+ color: lightslategrey;
+ font-family: sans-serif;
+}
+.detailscard > h2 {
+ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+
+</style>
+<body>
+    <div class="nav">
+        
+        <a href="index.html"><img style="width: 40px;height: 40px;" id="logo" src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt=""></a>
+        
+      </div>
+      <div id="parent">
+        <div id="fav-container"></div>
+      </div>
+</body>
+<script>
+     
+    let container = document.getElementById("fav-container");
+    let favouriteData = JSON.parse(localStorage.getItem("favourites"));
+    if(favouriteData === null) favouriteData = [];
+    displayProduct(favouriteData)
+   function displayProduct(data){
+
+    data.forEach(element => {
+            let card = document.createElement("div");
+            card.classList.add("card")
+            let imagecard = document.createElement("div")
+            imagecard.classList.add("imagecard")
+            let image = document.createElement("img");
+            imagecard.append(image)
+            
+            image.setAttribute("src",element.image);
+            let detailscard = document.createElement("div")
+            detailscard.classList.add("detailscard")
+            let name = document.createElement("h3");
+            name.innerText = element.title;
+            let price = document.createElement("h2");
+            price.innerText = "₹"+" "+element.price;
+            let category = document.createElement("p");
+            category.innerText = element.category;
+            let city = document.createElement("p")
+            city.innerText = element.city;
+            
+            detailscard.append(price,name,category,city)
+            card.append(imagecard,detailscard)
+            container.append(card)
+        })
+    }
+
+</script>
+</html>

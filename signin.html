@@ -7,31 +7,82 @@
     <title>Document</title>
 </head>
 <style>
-    #container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+   #parent{
+    display: flex;
+    justify-content: center;
+   }
+   #container{
+    border: 5px #006064 solid;
+    border-radius: 5px;
+    height: 400px;
+   width: 300px;
+   
     
-    #box2{
-        margin-bottom: 200px;
+   }
+   .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   #box2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   .box  > h3{
+    color: #006064;
+    font-family: cursive;
+   }
+    #sub {
+        background-color: aquamarine;
+        border-radius: 5px;
+    }
+    #emailid {
+        border-radius: 5px;
+       
     }
 </style>
 <body>
-  <div id="container">
-    <div id="parent">
+  <div id="parent">
+<div id="container">
     <div class="box">
-       <img src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt="">
-       <h3>Enter your phone number</h3>
+        <img src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt="">
+        <h3>Enter your email</h3>
+     </div>
+     <div id="box2">
+        <form action="" id="form">
+            <input type="email" placeholder="please enter email" id="emailid">
+            <input type="submit" id="sub" value="Next">
+        
+        </form>
+        
     </div>
-    <div id="box2">
-        <input value="+91" style="display: block;margin: auto;" type="number" placeholder="+91 |">
-        <div>
-            <h4 style="text-align: center;">next</h4>
-        </div>
-    </div>
-    
-  </div>
+   
+
 </div>
+  </div>
 </body>
+<script>
+     
+    let array = JSON.parse(localStorage.getItem("useremail"))
+
+    let myform = document.querySelector("form");
+    
+    myform.addEventListener("submit",function(e){
+        e.preventDefault();
+        array.forEach((element)=>{
+            console.log(element.email)
+            if(element.email == myform.emailid.value){
+                alert("login-successful")
+            }else{
+                alert("wrong-credential")
+            }
+        })
+    });
+    
+        
+    
+
+   
+</script>
 </html>

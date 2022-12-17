@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #parent {
+        border: 5px #006064 solid;
+        height: 400px;
+        border-radius: 6px;
+    }
+    
+    #box2{
+        margin-bottom: 200px;
+    }
+   
+    #box2 > input {
+        display: block;
+        margin: auto;
+        border: 2px #006064 solid;
+        border-radius: 5px;
+    }
+    #box2 > div > h4  {
+        text-align: center;
+    }
+    .box> h3{
+       text-align: center;
+       font-family: cursive;
+    }
+    
+</style>
+<body>
+  <div id="container">
+    <div id="parent">
+    <div class="box">
+       <img src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt="">
+       <h3>Enter your email</h3>
+    </div>
+    <div id="box2">
+        <form action="" >
+            <input type="email" placeholder="please enter email" id="email">
+            <input type="submit"  value="Next">
+        
+        </form>
+        
+    </div>
+    
+  </div>
+</div>
+</body>
+<script>
+    // function savedata(){
+
+    //     let email = document.getElementById("email").value
+    //     let user_email = new Array();
+    //     user_email = JSON.parse(localStorage.getItem("userEmail"));
+    //     if(user_email.some((v)=>{return V.email===email})){
+    //         alert("duplicate email!")
+    //     }
+    //     user_email.push({
+    //         "email":email,
+    //     })
+    // localStorage.setItem("userEmail",JSON.stringify(user_email))
+    // }
+   
+   let userEmail = [];
+JSON.parse(localStorage.getItem("useremail"))
+    
+    let myform = document.querySelector("form");
+myform.addEventListener("submit",function(e){
+    e.preventDefault();
+    let formdata = {
+        email : myform.email.value,
+    
+    }
+userEmail.push(formdata)
+localStorage.setItem("useremail",JSON.stringify(userEmail))
+alert("registered successfully")
+
+   
+   
+   
+})
+
+</script>
+</html>
