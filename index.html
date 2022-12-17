@@ -50,9 +50,12 @@
     } 
 
     .detailscard > h2 , .detailscard > p {
-   padding-left: 5px;
+   padding-left: 20px;
 
-    }   
+    }  
+    .detailscard > h3 {
+        padding-left: 20px;
+    } 
 .detailscard > p{
     color: lightslategrey;
     font-family: sans-serif;
@@ -278,6 +281,33 @@
     #acchild > div > p:hover {
      color: #737a7a ;
     }
+   .fav {
+   text-align: center;
+   
+   } 
+   #allcat {
+    padding-bottom: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   }
+   #input1 {
+    color: white; font-size: 25px; padding-left: 7px; padding-top: 10px;
+   }
+   #login {
+    color: #01282a;
+   }
+   #favourite {
+align-self: center;
+   }
+   #favourite > button {
+    border-radius: 5px;
+    background-color: #48989a;
+     height: 50px;
+      font-family: monospace; 
+      color: #E0E0E0;
+   }
+   #sell {
+    border-color: #054045; background-color: #18FFFF; font-family: fantasy; width: 100px;
+   }
    
 
 
@@ -285,7 +315,7 @@
     </style>
 </head>
 <body>
-    <div id="navdiv">
+    <div id="navdiv" style="position: static;">
     <nav>
         <a href="index.html"><img id="logo" src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt=""></a>
         <div id="search">
@@ -300,18 +330,20 @@
     </div>
     <div id="searchproducts">
         <div id="searchbox">
-        <input type="text" id="input"  placeholder="Find Cars, Mobile Phones and more...">
+        <input type="text"  id="input" placeholder="Find Cars, Mobile Phones and more...">
     </div>
 <div id="icon">
-        <i class="fa-solid fa-magnifying-glass" style="color: white; font-size: 25px; padding-left: 7px; padding-top: 10px;"></i>
+        <i id="input1" class="fa-solid fa-magnifying-glass" ></i>
     </div>
     </div>
         <select id="language">
            <option value="">English</option>
            <option value="">हिन्दि</option>
         </select>
-       <a href="login.html"><u id="login">login</u></a> 
-        <button id="sell">⁘SELL</button>
+        <a id="favourite"  href="./favourites.html"> <button >Favourites</button>
+            </a> 
+       <a style="align-self: center;" href="login.html"><u  id="login">login</u></a> 
+        <button id="sell" >⁘SELL</button>
     
 
     </nav>
@@ -319,7 +351,7 @@
 <div id="ac">
     <div id="acchild">
    <div id="icondiv">
-    <h5 style="padding-bottom: 5px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">ALL CATEGORIES </h5><i class="fa-sharp fa-solid fa-caret-down" style="margin: auto;padding-left: 9px;"></i>
+    <h5 id="allcat" >ALL CATEGORIES </h5> 
    </div>
    <div>
     <p>Cars</p>
@@ -423,45 +455,41 @@
 </body>
 
 <script>
-    let ac = document.getElementById("ac")
-    function allcategory (){
-        let page = document.createElement("div")
+   
+    let filterselect = document.getElementById("input1");
+    let input = document.getElementById("input")
+    let fetchedData = [];
+    fetchdata()
+    filterselect.addEventListener("click",function(){
+      let filteredData= fetchedData.filter((element)=>{
+        if(element.category==input.value){
+          return true
+        }else{
+          return false
+        }
+      })
+      displayProduct(filteredData)
+    })
+    
+let container = document.getElementById("container");
+    
+function fetchdata(){
+      let promise = fetch("https://639c1ac842e3ad6927272409.mockapi.io/products")
+      promise.then((responseObject)=>{
+        return responseObject.json();
+      })
+      .then((actualdata)=>{
         
-    }
-
-    
-    
-    let container = document.getElementById("container");
-    
-    
-    function signin (){
-        container.innerHTML = null
-       let box = document.createElement("div");
-       let form = document.createElement("form")
-       let name = document.createElement("input")
-       name.setAttribute("type", "text")
-       name.setAttribute("name", "fullname")
-       name.setAttribute("placeholder","Full Name")
-       form.append(name)
-       box.append(form)
-       container.append(box)
-
+        fetchedData = actualdata;
        
-      box.append(btn)
-      container.append(box)
-    // console.log("kkk")
+        displayProduct(actualdata)
+      })
+      .catch((error)=>{
+        console.log("error")
+      })
     }
-
-    let promise = fetch("https://639c1ac842e3ad6927272409.mockapi.io/products")
-    promise.then((responseObject)=>{
-        return responseObject.json()
-    })
-    .then((acctualdata)=>{
-        displayProduct(acctualdata)
-    })
-    .catch((error)=>{
-        console.log(error)
-    })
+    
+    
 
     function displayProduct(data){
         container.innerHTML=null
@@ -483,8 +511,34 @@
             let category = document.createElement("p");
             category.innerText = element.category;
             let city = document.createElement("p")
-            city.innerText = element.city
-            detailscard.append(price,name,category,city)
+            city.innerText = element.city;
+            let favourite = document.createElement("h3")
+        favourite.innerText= "❤️";
+        favourite.classList.add("fav")
+        
+        favourite.addEventListener("click",()=>{
+
+          let favouriteData = JSON.parse(localStorage.getItem("favourites"));
+          if(favouriteData===null) favouriteData = [];
+           
+            let alreadyaddedinfavourites = false;
+for(let i=0; i<favouriteData.length; i++){
+  if(favouriteData[i].id === element.id){
+    alreadyaddedinfavourites = true;
+    break;
+  };
+}
+if(alreadyaddedinfavourites === true){
+  alert.innerText="Item Already in Favourites"
+}else{
+  
+  favouriteData.push({...element,});
+  localStorage.setItem("favourites",JSON.stringify(favouriteData));
+  alert.innerText = "Item Added To Favourites"
+}
+          }
+        )
+            detailscard.append(price,name,category,city,favourite)
             card.append(imagecard,detailscard)
             container.append(card)
         });

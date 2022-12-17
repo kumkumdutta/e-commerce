@@ -38,6 +38,14 @@ height: 400px;
     height: 50px;
     border-radius: 5px;
    } 
+   #mobile > i ,#google > i {
+    align-self: center; padding-left: 2px; color: #013132;
+   }
+   #mobile > h3, #google > h3 {
+    color: #013132;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; 
+    align-self: center; padding-left: 25px;
+   }
     #container2 {
     display: flex;
     justify-content: center;
@@ -70,7 +78,9 @@ height: 400px;
     height: 49px;
     border-radius: 5px;
    }
-
+#signin , #signin2{
+    text-decoration: none;
+}
 
 </style>
 <body>
@@ -80,27 +90,29 @@ height: 400px;
     </div>
     
 </div>
-<a href="signin.html">
+<a  href="signup.html" id="signin">
 <div id="container2">
 
     <div id="mobile">
-        <i class="fa-sharp fa-solid fa-mobile" style="align-self: center; padding-left: 2px; color: #013132;"></i>
-        <h3 style="color: #013132;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; align-self: center; padding-left: 25px;">Continue with Phone</h3>
+        <i class="fa-sharp fa-solid fa-mobile" ></i>
+        <h3>Continue with Phone</h3>
     </div>
     
 </div>
 </a>
+<a href="signup2.html" id="signin2">
 <div id="container3" >
     
     <div id="google">
-        <i class="fa-brands fa-google" style=" align-self: center; padding-right: 5px; "></i>
+        <i class="fa-brands fa-google"></i>
         <h3>Continue with Google</h3>
     </div>
 </div>
+</a>
 <div id="container4">
     <div id="ordiv">
         <p>OR</p>
-        <u>Login with Email</u>
+        <a href="signin.html"><u>Login with Email</u></a>
     </div>
 </div>
 
