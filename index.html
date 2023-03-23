@@ -308,6 +308,14 @@ align-self: center;
    #sell {
     border-color: #054045; background-color: #18FFFF; font-family: fantasy; width: 100px;
    }
+   .fav {
+        
+        margin-left: 60px;
+        border : 0px ;
+        background-color: #18FFFF;
+        height:30px;
+        border-radius: 40%;
+    }
    
 
 
@@ -317,7 +325,7 @@ align-self: center;
 <body>
     <div id="navdiv" style="position: static;">
     <nav>
-        <a href="index.html"><img id="logo" src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt=""></a>
+        <a href="index.html"><img id="logo" src="https://img.freepik.com/free-vector/branding-identity-corporate-b-logo-vector-design-template_460848-13934.jpg" alt=""></a>
         <div id="search">
             
             <i class="fa-solid fa-magnifying-glass" style="display: block; margin: auto;"></i>
@@ -384,7 +392,7 @@ align-self: center;
     
 </div>
     <div id="banner">
-        <img id="binimoy" src="https://scontent.fccu19-1.fna.fbcdn.net/v/t39.30808-6/320165796_1356125731829001_5188391584511842324_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=nT3wSG_ybf8AX8GqJsp&tn=cTC-NZG8vwCImZqt&_nc_ht=scontent.fccu19-1.fna&oh=00_AfBuJFpa4wTiryK9UH1hrbOG2PJgCkxrsR0WvPpoapR8dA&oe=639EF9A2" alt="">
+        <img id="binimoy" src="https://img.freepik.com/free-vector/branding-identity-corporate-b-logo-vector-design-template_460848-13934.jpg" alt="">
         <h2>BINIMOY AUTO GIVES EXTRAAA PRICE FOR EVERY CAR</h2>
         <button>Sell Car</button>
         <img id="car" src="https://www.cartoq.com/wp-content/uploads/2022/03/alto.jpg" alt="">
@@ -474,7 +482,7 @@ align-self: center;
 let container = document.getElementById("container");
     
 function fetchdata(){
-      let promise = fetch("https://639c1ac842e3ad6927272409.mockapi.io/products")
+      let promise = fetch("https://mocki.io/v1/1fedcfe5-c131-457b-a0d8-0f90ea4cc60b")
       promise.then((responseObject)=>{
         return responseObject.json();
       })
@@ -512,8 +520,8 @@ function fetchdata(){
             category.innerText = element.category;
             let city = document.createElement("p")
             city.innerText = element.city;
-            let favourite = document.createElement("h3")
-        favourite.innerText= "❤️";
+            let favourite = document.createElement("button")
+        favourite.innerText= "Add to favourite";
         favourite.classList.add("fav")
         
         favourite.addEventListener("click",()=>{
