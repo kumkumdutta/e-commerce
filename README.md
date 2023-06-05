@@ -14,7 +14,7 @@ this is a clone website of OLX.com.
  
  <p>if you write mobile,car,tv,bike anything on the input box and click on the search icon the perticular data will be fetched</p>
  
- <h1>example :-</h1>
- 
- <img src="https://lh3.googleusercontent.com/ExIZflh_oAxUUcLTSKtTsMGyNWVhkSVLUdO081lYP1l0npy0cKYd3eU6ispivMuDmSPMEjbATy3LTZJFnGXO-bRMnkFEinq9eLAEQ6ayXbJ3Grzysc8WsSTPF1Chawh6TFB7qWBAZFpYVoRMRTdgD6jGk5elNv56UMGm0fzKWLRg79yNxGZPVoEW_e0_Gjr8Mb2HWXcpmbGDFsQlfOX8IJmriTWPOPeBdMK-CM91viWHe66NyAuc7F2N-H_Vyx9L-HG9f1roz6I9rZepd5ZFptIh4ImTNKEs36LSgb0C0-AnMcKulqUh0BRDt8YjFErrKEtazNnX5CvXKucGTBsJGm1hlybasa-M9m-9aICewd6Rvs1QxY5ZAAU3GzVsHwVaIOg_fE6XNEwqsI33wOkeO2T136tNEdOID9B1JvqnrqSW0nXmX4Cnsm0Gf_y_QzVN2oMPzF761jC9ptba8z4aEjIZs8W9N6DDZZGIHbr1Lk7MMeZYzCM6sPHXY_efLj_gL6JJRf4fBIOK-dlSJYCocsPiePltnOPhsg4jQ27sfa7Sq9O0Rq03Ea9YIXFEQqhER5IG2qWn51uw6ierYmrjGQ-Nw9LG5sPBIkzcjxuiE8aDQbfrJhZ38f-WkICofPfimtTXCF0nk5uGXW1eEEJyFmTRD-8Xtqdj1ZsfqSIG-NAO0BLvOVntb1R3CJ7HZZEDr7HhKoxnl6N40k-Lw2G5TrOrK6hfK2baNYiO3TMhrABflJGAtcRkv82Nlq1fSVJpMPFOtZoZcgZtrtfgq0pAmeLaa8s8O0cemJhJeG1iH-nFnIUYiPB-rQWuXLfh-zZy--FdztKo3pPHm_quUjz8FllpKA9ZhHyrOGeb7VRKvK6KAnwZdmTQEjUBUOhR-I5hd8TrqDpT5bgqheFSYR82fUiboPDYWHeF39GAeSXMQ5lH-Fgz=w1658-h933-s-no?authuser=0"/>
+<p>2.when you click on add to favourite the item will be added to favourites</p>
+
+<p>Login / signup is also working</p>
 
